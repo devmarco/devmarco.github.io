@@ -15,6 +15,7 @@ var mpAPP = function() {
         navLinks = document.querySelectorAll('.js-anchor'),
         shareButton = document.querySelector('.js-share'),
         shareList = shareButton.parentNode.querySelector('.social__list'),
+        body = document.querySelector('body'),
 
         //Base
         wrapperRowsWidth = wrapperRows[0].offsetWidth,
@@ -133,6 +134,7 @@ var mpAPP = function() {
         document.addEventListener('mousemove', function(e) {
             wrapperArrowsRight.style.top = (e.clientY - 28) + 'px';
             wrapperArrowsLeft.style.top = (e.clientY - 28) + 'px';
+            e.preventDefault();
         });
 
         wrapperArrowsRight.addEventListener('click', function() {
@@ -143,11 +145,17 @@ var mpAPP = function() {
             prev();
         });
 
-        shareButton.addEventListener('click', function() {
+        shareButton.addEventListener('click', function(e) {
             shareList.style.display = 'block';
+            e.stopImmediatePropagation();
         });
 
-        shareList.addEventListener('click', function(e) {
+        body.addEventListener('click', function(e) {
+            shareList.style.display = 'none';
+            e.preventDefault();
+        });
+
+        shareList.addEventListener('mouseleave', function(e) {
             shareList.style.display = 'none';
             e.preventDefault();
         });

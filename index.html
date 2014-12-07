@@ -15,19 +15,6 @@ layout: default
 
         {{ post.content }}
 
-        <div class="social__list">
-            <ul>
-                <li>
-                    <a href="#">Facebook</a>
-                </li>
-                <li>
-                    <a href="">Twitter</a>
-                </li>
-                <li>
-                    <a href="">Google+</a>
-                </li>
-            </ul>
-        </div>
         <button class="share-button js-share">
             <svg version="1.1" id="Your_Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
                 <g>
@@ -43,6 +30,17 @@ c-0.895-0.896-2.348-0.896-3.242,0l-9.839,9.839c-0.896,0.896-0.896,2.348,0,3.243C
             </svg>
             Share this post
         </button>
+        <ul class="social__list">
+            <li class="facebook">
+                <a href="#">Facebook</a>
+            </li>
+            <li class="twitter">
+                <a href="">Twitter</a>
+            </li>
+            <li class="google">
+                <a href="">Google+</a>
+            </li>
+        </ul>
     </div>
 </article>
 {% endfor %}
