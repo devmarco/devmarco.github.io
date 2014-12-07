@@ -152,7 +152,7 @@ var mpAPP = function() {
 
         body.addEventListener('click', function(e) {
             shareList.style.display = 'none';
-            e.preventDefault();
+            e.stopImmediatePropagation();
         });
 
         shareList.addEventListener('mouseleave', function(e) {

@@ -2,9 +2,10 @@
 title: Marco Paulo Front End Enginner
 email: markoskt@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Hi!, i`m a 23 years oldFront End Enginner that currently works in University Federal of Minas Gerais.
+  Along for these years i have gained a large body of experience across many web technologies both client and server side.
+  Ever focused heavily in front­end performance, scalability, architecture and maintainability.
+
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://devmarco.github.io" # the base hostname & protocol for your site
 twitter_username: devmarco
