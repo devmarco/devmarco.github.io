@@ -13,3 +13,5 @@ github_username:  devmarco
 
 # Build settings
 markdown: kramdown
+sass:
+    style: :compressed

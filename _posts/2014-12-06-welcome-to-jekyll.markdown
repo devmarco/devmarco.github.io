@@ -1,5 +1,5 @@
 ---
-title:  "Welcome to Jekyll!"
+title:  "Why I decided to use Jekyll for my blog?"
 date:   2014-12-06 22:20:12
 categories: jekyll update
 tags: ['tips','works']
