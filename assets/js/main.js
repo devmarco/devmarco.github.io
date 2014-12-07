@@ -32,7 +32,7 @@ var mpAPP = function() {
     }
 
     var setup = function setup() {
-        var urlPath = location.pathname.split('/').pop(),
+        var urlPath = location.hash,
             helpers = util();
 
         if (!mobile) {
@@ -84,8 +84,9 @@ var mpAPP = function() {
                     }];
 
                 for (var i = 0; i < titlePage.length; i++) {
+                    //Hasgbang Used for Support Github Pages
                     var title = titlePage[i].textContent || titlePage[i].innerText,
-                        titleSlug = title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+                        titleSlug = '#/'+title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
 
                     //Array for indexOf search
                     slugTitlesArray.push(titleSlug);

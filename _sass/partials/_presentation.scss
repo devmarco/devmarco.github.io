@@ -30,12 +30,19 @@
     p {
         margin: 20px 0;
         font-style: italic;
-        color: #909090;
+        color: #849299;
+        //font-weight: 100;
         @extend %f13;
 
         @include breakpoint(from-lg) {
             font-size: 1.6em;
             line-height: 1.4em;
+        }
+
+        a, strong {
+            color: #5C9DBE;
+            font-weight: inherit;
+            @extend %f10;
         }
     }
 
