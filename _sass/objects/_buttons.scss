@@ -1,0 +1,33 @@
+.btn {
+	padding: 5px 15px;
+	position: relative;
+
+	&:after, &:before {
+		content: "";
+		display: block;
+		height: 2px;
+		background: #27aae1;
+		width: 0;
+		position: absolute;
+
+		@include vendor(transition, width 0.2s ease);
+	}
+	
+	&:after {
+		bottom: -2px;
+		right: 0;
+	}
+
+	&:before {
+		top: -2px;
+		left: 0;
+	}
+
+    &:hover {
+    	text-decoration: none;
+    	
+    	&:after, &:before {
+    		width: 100%;
+    	}
+    }
+}

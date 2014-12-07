@@ -1,0 +1,21 @@
+.label {
+    color: #fff;
+    padding: 2px 7px 4px;
+    display: inline-block;
+    @extend %f10;
+    @include vendor(border-radius, 4px);
+}
+.label--works {
+    background-color: #000;
+    @extend .label;
+}
+.label--tips {
+    color: #000;
+    background-color: #F8FF15;
+    @extend .label;
+}
+.label--css {
+    background-color: #3372E5;
+    color: #fff;
+    @extend .label;
+}

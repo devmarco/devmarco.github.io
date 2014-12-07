@@ -1,0 +1,55 @@
+.works, .tips, .about {
+    strong {
+        color: #666;
+    }
+    h2 {
+        font-weight: 100;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        margin: 0 0 30px;
+        font-style: italic;
+        @extend %f40;
+    }
+    p, a, li {
+        @extend %f13;
+        line-height: 1.6em;
+
+        @include breakpoint(from-lg) {
+            font-size: 1.6em;
+            line-height: 1.8em;
+        }
+
+        a {
+            @extend %f10;
+        }
+    }
+    p {
+        margin: 10px 0;
+    }
+    a {
+        color: #27aae1;
+    }
+    ul {
+        padding-left: 1.6em;
+        list-style-type: square;
+
+        li {
+            @extend %f12;
+        }
+    }
+    li {
+        font-style: italic;
+    }
+    li:first-child {
+        margin-top: 0;
+    }
+    time {
+        display: block;
+        text-transform: uppercase;
+        font-style: italic;
+        color: #A9A9A9;
+        font-weight: 100;
+
+        @extend %f12;
+    }
+}

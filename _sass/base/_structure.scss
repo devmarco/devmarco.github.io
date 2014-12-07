@@ -1,0 +1,222 @@
+html, body {
+    height: 100%;
+    min-height: 100%;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    position: relative;
+    color: rgba(0, 0, 0, 0.8);
+    @include breakpoint(up-to-xs) {
+        background: none;
+        overflow: initial;
+    }
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 6em;
+    width: 5000px;
+    @include vendor(transition, all 0.2s ease-in-out);
+    @include breakpoint(up-to-xs) {
+        padding: 0;
+        overflow: initial;
+        height: auto;
+    }
+}
+.wrapper__rows {
+    position: relative;
+    width: 35em;
+    height: 100%;
+    padding: 0 0 0 1.8em;
+    overflow: hidden;
+    display: table-cell;
+    @include vendor(transition, all 0.2s ease-in-out);
+    @include breakpoint(from-lg) {
+        width: 40em;
+    }
+    @include breakpoint(up-to-xs) {
+        width: 32em;
+        max-width: 100%;
+        padding: 0;
+    }
+    .header {
+        margin: 20px 0;
+        @extend .cf;
+    }
+    .content {
+        padding: 2em;
+        position: relative;
+    }
+    .social__list {
+        display: none;
+        position: absolute;
+        z-index: 40;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 2px;
+        background: rgba(255, 255, 255, 0.9);
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            padding: 70% 0 0 0;
+        }
+        a {
+            display: block;
+            text-align: center;
+            padding: 1em 0;
+        }
+    }
+    &:hover {
+        .share-button {
+            @include opacity(10);
+        }
+    }
+    .share-button {
+        display: block;
+        border: none;
+        background: transparent;
+        padding: 0;
+        margin: 4em auto auto auto;
+        color: #ccc;
+        font-style: italic;
+        @include vendor(transition, opacity 0.5s ease-in-out);
+        @include opacity(0);
+        @extend %f11;
+        svg {
+            display: block;
+            margin: 0 auto 0.5em auto;
+            fill: #ccc;
+        }
+        &:hover {
+            @include opacity(7);
+            color: #666;
+            svg {
+                fill: #666;
+            }
+        }
+    }
+}
+@-webkit-keyframes fade {
+    0% {
+        @include opacity(0);
+    }
+    100% {
+        @include opacity(10);
+    }
+}
+@-moz-keyframes fade {
+    0% {
+        @include opacity(0);
+    }
+    100% {
+        @include opacity(10);
+    }
+}
+@-o-keyframes fade {
+    0% {
+        @include opacity(0);
+    }
+    100% {
+        @include opacity(10);
+    }
+}
+@-ms-keyframes fade {
+    0% {
+        @include opacity(0);
+    }
+    100% {
+        @include opacity(10);
+    }
+}
+.animate {
+    @include vendor(animation, fade 1s ease);
+}
+.wrapper__arrows {
+    width: 6em;
+    padding: 0 10px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    @include breakpoint(up-to-xs) {
+        display: none;
+    }
+    .arrow {
+        display: block;
+        margin: 0 auto;
+    }
+}
+.wrapper__arrows.right {
+    right: 0;
+}
+.wrapper__arrows.left {
+    left: 0;
+}
+.arrow {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    text-indent: -999em;
+    padding: 0;
+    left: 0;
+
+    svg {
+        display: block;
+        margin: 0 auto;
+    }
+}
+.arrow--right {
+    top: 0;
+    @extend .arrow;
+
+    &:hover {
+        polygon {
+            fill: #000;
+        }
+    }
+
+}
+.arrow--left {
+    top: 0;
+    @extend .arrow;
+
+    &:hover {
+        polygon {
+            fill: #000;
+        }
+    }
+   
+}
+/**
+ * Background Pattern
+ */
+
+.bg__pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    @include breakpoint(up-to-xs) {
+        display: none;
+    }
+    svg {
+        position: relative;
+        z-index: 100;
+        margin-left: 33em;
+        float: left;
+        display: block;
+        @include breakpoint(from-lg) {
+            margin-left: 38em;
+        }
+    }
+    svg:first-child {
+        margin-left: 6em;
+    }
+}
