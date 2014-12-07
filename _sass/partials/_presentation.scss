@@ -1,6 +1,6 @@
 .presentation {
     position: fixed;
-    width: 29em;
+    width: 31em;
 
     @include breakpoint(from-lg) {
         width: 34em;
