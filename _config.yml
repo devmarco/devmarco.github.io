@@ -17,4 +17,4 @@ sass:
     style: :compressed
 
 # Permalinks
-permalink: /#/:title
+permalink: :title
