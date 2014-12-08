@@ -22,6 +22,7 @@ html, body {
         padding: 0;
         overflow: initial;
         height: auto;
+        width: auto;
     }
 }
 .wrapper__rows {
@@ -39,6 +40,7 @@ html, body {
         width: 32em;
         max-width: 100%;
         padding: 0;
+        display: block;
     }
     .header {
         margin: 20px 0;
@@ -141,6 +143,10 @@ html, body {
             svg {
                 fill: #666;
             }
+        }
+
+        @include breakpoint(up-to-xs) {
+            @include opacity(10);
         }
     }
 }

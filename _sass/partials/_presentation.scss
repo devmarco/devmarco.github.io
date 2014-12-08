@@ -133,6 +133,10 @@
     	float: left;
     	margin-left: 20px;
 
+        @include breakpoint(up-to-xs) {
+            margin-left: 10px;
+        }
+
     	img {
     		width: 25px;
     	}
