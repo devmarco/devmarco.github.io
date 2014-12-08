@@ -77,14 +77,17 @@ var mpAPP = function () {
                 return false;
             },
             generateSlugs: function() {
-                var titlePage = document.querySelectorAll('h2'),
+                var titlePage = document.querySelectorAll('h1'),
                     slugTitlesArray = [],
-                    slugTitlesObject = [{
-                        title: document.title,
-                        slug: '/'
-                    }];
+                    slugTitlesObject = [],
+                    i = 1;
+                
+                slugTitlesObject = [{
+                    title: document.title,
+                    slug: '/'
+                }];
 
-                for (var i = 0; i < titlePage.length; i++) {
+                for (i; i < titlePage.length; i++) {
                     //Hasgbang Used for Support Github Pages
                     var title = titlePage[i].textContent || titlePage[i].innerText,
                         titleSlug = '#/'+title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
