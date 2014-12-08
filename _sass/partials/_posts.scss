@@ -2,7 +2,7 @@
     strong {
         color: #666;
     }
-    h2 {
+    h1 {
         font-weight: 100;
         text-transform: uppercase;
         word-wrap: break-word;
@@ -23,7 +23,7 @@
             @extend %f10;
         }
     }
-    p {
+    p, h2, h3, h4, h5 {
         margin: 10px 0;
     }
     a {
