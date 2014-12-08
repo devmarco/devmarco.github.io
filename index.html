@@ -3,10 +3,10 @@ layout: default
 ---
 
 {% for post in site.posts %}
-  <article class="wrapper__rows tips">
+  <article class="wrapper__rows {{ post.tagMaster }}">
     <div class="content">
         {% for tags in post.tags %}
-            <span class="label--{{ tags }}">{{ tags }}</span>
+            <span class="label label--{{ tags }}">{{ tags }}</span>
         {% endfor %}
         <div class="header">
             <time class="post__date" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>

@@ -1,7 +1,8 @@
 ---
 title:  "A litle bit about me"
 date:   2014-12-08 13:02:12
-tags: ['about']
+tagMaster: about
+tags: ['about','curriculum']
 ---
 
 Hi!, i`m a 23 years old **Front End Enginner** that currently works in **University Federal of Minas Gerais**.
