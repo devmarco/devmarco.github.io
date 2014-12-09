@@ -31,7 +31,8 @@ html, body {
     height: 100%;
     padding: 0 0 0 1.8em;
     overflow: hidden;
-    display: table-cell;
+    display: block;
+    float: left;
     @include vendor(transition, all 0.2s ease-in-out);
     @include breakpoint(from-lg) {
         width: 40em;
