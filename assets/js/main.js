@@ -11,5 +11,10 @@ var shareFunction = (function shareFunction() {
 
 
 //Init Application
-var app = mpAPP();
-app.init();
+
+document.addEventListener('DOMContentLoaded', function(){
+	var app = mpAPP();
+	app.init();
+});
+
+
