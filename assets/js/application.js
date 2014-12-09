@@ -152,11 +152,6 @@ var mpAPP = function () {
             prev();
         });
 
-        body.addEventListener('click', function(e) {
-            shareList.style.display = 'none';
-            e.stopImmediatePropagation();
-        });
-
         //Listener popstate function
         window.onpopstate = function(event) {
             if (event.state === null)
