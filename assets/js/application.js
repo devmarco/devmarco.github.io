@@ -13,8 +13,7 @@ var mpAPP = function () {
         wrapperArrowsRight = document.querySelector('.arrow--right'),
         wrapperArrowsLeft = document.querySelector('.arrow--left'),
         navLinks = document.querySelectorAll('.js-anchor'),
-        shareButton = document.querySelector('.js-share'),
-        shareList = shareButton.parentNode.querySelector('.social__list'),
+        shareButton = document.querySelectorAll('.js-share'),
         body = document.querySelector('body'),
 
         //Base
@@ -121,6 +120,9 @@ var mpAPP = function () {
      * @return {[type]} [description]
      */
     var bindActions = function bindActions() {
+        var navLinksIterate = 0,
+            shareLinksIterate = 0;
+
         document.addEventListener('keydown', function(e) {
             switch (e.keyCode) {
                 case 37:
@@ -148,19 +150,9 @@ var mpAPP = function () {
             prev();
         });
 
-        shareButton.addEventListener('click', function(e) {
-            shareList.style.display = 'block';
-            e.stopImmediatePropagation();
-        });
-
         body.addEventListener('click', function(e) {
             shareList.style.display = 'none';
             e.stopImmediatePropagation();
-        });
-
-        shareList.addEventListener('mouseleave', function(e) {
-            shareList.style.display = 'none';
-            e.preventDefault();
         });
 
         //Listener popstate function
@@ -172,6 +164,27 @@ var mpAPP = function () {
             document.title = event.state.titleSlug.title;
         };
 
+        //Bind for share links
+        var bindShareLinks = function(index) {
+            var shareList = shareButton[index].parentNode.querySelector('.social__list');
+            
+            shareButton[index].addEventListener('click', function(e) {
+                shareList.style.display = 'block';
+                e.stopImmediatePropagation();
+            });
+
+            shareList.addEventListener('mouseleave', function(e) {
+                shareList.style.display = 'none';
+                e.preventDefault();
+            });
+
+            return false;
+        }
+
+        for (shareLinksIterate; shareLinksIterate < shareButton.length; shareLinksIterate++) {
+            bindShareLinks(shareLinksIterate);
+        }
+
         //Bind for navigations links
         var bindNavLinks = function(index) {
             navLinks[index].addEventListener('click', function(e) {
@@ -181,9 +194,8 @@ var mpAPP = function () {
             return false;
         };
 
-        var i = 0;
-        for (i; i < navLinks.length; i++) {
-            bindNavLinks(i);
+        for (navLinksIterate; navLinksIterate < navLinks.length; navLinksIterate++) {
+            bindNavLinks(navLinksIterate);
         }
     };
 
