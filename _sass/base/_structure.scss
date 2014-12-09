@@ -183,15 +183,6 @@ html, body {
     }
 }
 
-.wrapper__rows:first-child {
-    @include vendor(transform, translateZ(0));
-    .content {
-        position: fixed;
-        width: 35.2em;
-        
-    }
-}
-
 .animate {
     @include vendor(animation, fade 1s ease);
 }
