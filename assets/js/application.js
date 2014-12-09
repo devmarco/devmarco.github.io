@@ -46,8 +46,6 @@ var mpAPP = function () {
         if (urlPath !== '') {
             var index = slugs.array.indexOf(urlPath);
 
-            console.log(urlPath, index)
-
             document.title = urlPath;
             run(index + 1);
             distanceToHome = index + 1;
@@ -261,6 +259,8 @@ var mpAPP = function () {
 
         //Set url history
         helpers.setHistory(position || distanceToHome);
+
+        console.log(nextPosition);
 
         //Where the magic happens
         wrapper.style.webkitTransform = 'translate3d(-' + nextPosition + 'px,0,0)';
