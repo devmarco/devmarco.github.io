@@ -46,6 +46,8 @@ var mpAPP = function () {
         if (urlPath !== '') {
             var index = slugs.array.indexOf(urlPath);
 
+            console.log(urlPath, index)
+
             document.title = urlPath;
             run(index + 1);
             distanceToHome = index + 1;
@@ -167,7 +169,7 @@ var mpAPP = function () {
         //Bind for share links
         var bindShareLinks = function(index) {
             var shareList = shareButton[index].parentNode.querySelector('.social__list');
-            
+
             shareButton[index].addEventListener('click', function(e) {
                 shareList.style.display = 'block';
                 e.stopImmediatePropagation();
