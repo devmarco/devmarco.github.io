@@ -260,7 +260,7 @@ var mpAPP = function () {
         //Set url history
         helpers.setHistory(position || distanceToHome);
 
-        console.log(nextPosition);
+        console.log(nextPosition, position, nextPosition, wrapperRowsWidth);
 
         //Where the magic happens
         wrapper.style.webkitTransform = 'translate3d(-' + nextPosition + 'px,0,0)';
