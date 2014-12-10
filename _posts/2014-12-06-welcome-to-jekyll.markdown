@@ -1,14 +1,12 @@
 ---
-title:  "Why I decided to use Jekyll for my blog?"
-date:   2014-12-06 22:20:12
-tagMaster: tips
-tags: ['tips','css', 'html5']
+title:  "Document and write tests for your project!"
+date:   2014-12-10 18:29:12
+tagMaster: blog
+tags: ['tips','TDD', 'AngularJS']
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
+Quando começei a trabalhar na UFMG, começei a trabalhar em um projeto bem interessante, o ZUNI.
+Em resumo, um app muito semelhante ao (flickr)[http://www.flickr.com] onde você pode criar albums de fotos, visualizar fotos de outras pessoas, editar etc..
+Esse projeto já estava em andamento e com cerca de 30% desenvolvido. Quando começo a trabalhar
 
 {% highlight ruby %}
 def print_hi(name)
