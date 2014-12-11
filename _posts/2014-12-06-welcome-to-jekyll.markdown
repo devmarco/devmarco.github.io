@@ -4,9 +4,22 @@ date:   2014-12-10 18:29:12
 tagMaster: blog
 tags: ['tips','TDD', 'AngularJS']
 ---
-Quando começei a trabalhar na UFMG, começei a trabalhar em um projeto bem interessante, o ZUNI.
-Em resumo, um app muito semelhante ao (flickr)[http://www.flickr.com] onde você pode criar albums de fotos, visualizar fotos de outras pessoas, editar etc..
-Esse projeto já estava em andamento e com cerca de 30% desenvolvido. Quando começo a trabalhar
+
+Hoje em dia me surpreende que a maioria dos desenvolvedores Front-End não saibam sobre testes. 
+
+Atualmente existem varias práticas para se desenvolver um software utilizando testes. Algumas delas são: DDD, FDD, TDD, ATDD, BDD.
+
+Hoje vou mostrar a diferença de cada uma, e convencer você de que escrever testes é mais do que importante.
+
+###DDD - Domain drive design (Desenvolvimento orientado a domínio)
+
+O DDD veio do titulo do livro (Domain-Drive Design)[http://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215] escrito por Eric Evans. DDD não é uma metodologia, resumindo, pode se dizer que é um conjunto de técnicas e boas práticas que permite desenvolver um software focando no domínio
+
+
+
+
+
+
 
 {% highlight ruby %}
 def print_hi(name)
