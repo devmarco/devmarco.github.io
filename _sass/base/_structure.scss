@@ -20,8 +20,8 @@ html, body {
     @include vendor(transition, all 0.2s ease-in-out);
     @include breakpoint(up-to-xs) {
         padding: 0;
-        overflow: initial;
-        height: auto;
+        overflow: visible;
+        height: 100%;
         width: 100% !important;
     }
 }
@@ -38,7 +38,8 @@ html, body {
         width: 40em;
     }
     @include breakpoint(up-to-xs) {
-        width: 32em;
+        width: 100%;
+        height: auto;
         max-width: 100%;
         padding: 0;
         display: block;

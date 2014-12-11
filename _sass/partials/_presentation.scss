@@ -5,7 +5,7 @@
 
     @include breakpoint(up-to-xs) {
         position: relative;
-        width: 28em;
+        width: 100%;
     }
 }
 
@@ -155,7 +155,7 @@
 	font-weight: 100;
 	width: 85%;
 	margin: 25px auto auto auto;
-	@extend %f14;
+	@extend %f16;
 
     @include breakpoint(from-lg) {
         font-size: 1.7em;
