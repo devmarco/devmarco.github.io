@@ -13,8 +13,8 @@ There are several types of tests, *unit tests*, *acceptance tests*, *tests of th
 
 There are several frameworks for tests
 
-* [Jasmine][http://jasmine.github.io/]
-* [Mocha][http://mochajs.org/]
-* [QUnit][http://qunitjs.com/]
+* [Jasmine](http://jasmine.github.io/)
+* [Mocha](http://mochajs.org/)
+* [QUnit](http://qunitjs.com/)
 
 Choose one and be happy!
