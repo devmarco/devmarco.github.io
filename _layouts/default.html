@@ -16,8 +16,11 @@
         });
 
         FB.ui({
-            method: 'share',
-            href: 'http://127.0.0.1:4000/%23/write-tests',
+            method: 'feed',
+            link: 'http://127.0.0.1:4000/%23/write-tests',
+            picture: 'http://devmarco.github.io/assets/imgs/logo/devmarco-facebook.png',
+            caption: 'Teste caption',
+            description: 'Teste description'
         }, function(response) {
             console.log(response);
         });
