@@ -15,16 +15,17 @@
             version: 'v2.1'
         });
 
-        FB.ui({
-            method: 'feed',
-            link: 'http://devmarco.github.io/#/write-tests',
-            picture: 'http://devmarco.github.io/assets/imgs/logo/devmarco-facebook.png',
-            caption: 'Teste caption',
-            description: 'Teste description'
-        }, function(response) {
-            console.log(response);
-        });
-
+        window.shareThisPost = function shareThisPost(link, caption, description) {
+            FB.ui({
+                method: 'feed',
+                link: 'http://devmarco.github.io/#/write-tests',
+                picture: 'http://devmarco.github.io/assets/imgs/logo/devmarco-facebook.png',
+                caption: 'Teste caption',
+                description: 'Teste description'
+            }, function(response) {
+                console.log(response);
+            });
+        };
     };
     </script>
 
