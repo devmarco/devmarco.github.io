@@ -18,10 +18,10 @@
         window.shareThisPost = function shareThisPost(link, caption, description) {
             FB.ui({
                 method: 'feed',
-                link: 'http://devmarco.github.io/#/write-tests',
+                link: link,
                 picture: 'http://devmarco.github.io/assets/imgs/logo/devmarco-facebook.png',
-                caption: 'Teste caption',
-                description: 'Teste description'
+                caption: caption,
+                description: description
             }, function(response) {
                 console.log(response);
             });
