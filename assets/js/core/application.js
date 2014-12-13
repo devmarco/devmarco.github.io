@@ -15,6 +15,7 @@ var mpAPP = function () {
         navLinks = document.querySelectorAll('.js-anchor'),
         shareButton = document.querySelectorAll('.js-share'),
         body = document.querySelector('body'),
+        aside = wrapper.querySelector('.content'),
 
         //Base
         wrapperRowsWidth = wrapperRows[0].offsetWidth,
@@ -192,6 +193,18 @@ var mpAPP = function () {
         for (navLinksIterate; navLinksIterate < navLinks.length; navLinksIterate++) {
             bindNavLinks(navLinksIterate);
         }
+
+
+        var fixedPresentation = window.onscroll = function() {
+            var scrollDistance;
+
+            window.pageYOffset > 0 ? scrollDistance = window.pageYOffset : scrollDistance = 0;
+
+            console.log(scrollDistance);
+
+            aside.style.webkitTransform = 'translate3d(0,'+scrollDistance+'px,0)';
+            aside.style.MozTransform = 'translate3d(0,'+scrollDistance+'px,0)';
+        };
     };
 
 
