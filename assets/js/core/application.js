@@ -5,27 +5,27 @@
  * @return {[type]} [description]
  */
 
-var mpAPP = (function() {
+var mpAPP = function mpAPP() {
     var
     //Define the selectors
-    wrapper = document.querySelector('.wrapper'),
-    wrapperRows = wrapper.querySelectorAll('.wrapper__rows'),
-    wrapperArrowsRight = document.querySelector('.arrow--right'),
-    wrapperArrowsLeft = document.querySelector('.arrow--left'),
-    navLinks = document.querySelectorAll('.js-anchor'),
-    shareButton = document.querySelectorAll('.js-share'),
-    body = document.querySelector('body'),
-    aside = wrapper.querySelector('.content'),
+        wrapper = document.querySelector('.wrapper'),
+        wrapperRows = wrapper.querySelectorAll('.wrapper__rows'),
+        wrapperArrowsRight = document.querySelector('.arrow--right'),
+        wrapperArrowsLeft = document.querySelector('.arrow--left'),
+        navLinks = document.querySelectorAll('.js-anchor'),
+        shareButton = document.querySelectorAll('.js-share'),
+        body = document.querySelector('body'),
+        aside = wrapper.querySelector('.content'),
 
-    //Base
-    wrapperRowsWidth = wrapperRows[0].offsetWidth,
-    wrapperRowsLength = wrapperRows.length,
-    distanceToHome = 0,
-    nextPosition = 0,
-    rowsLimit = (wrapperRowsLength - 1),
-    breakArea = 420,
-    mobile = false,
-    slugs;
+        //Base
+        wrapperRowsWidth = wrapperRows[0].offsetWidth,
+        wrapperRowsLength = wrapperRows.length,
+        distanceToHome = 0,
+        nextPosition = 0,
+        rowsLimit = (wrapperRowsLength - 1),
+        breakArea = 420,
+        mobile = false,
+        slugs;
 
     //If in mobile, change value to true
     if (window.outerWidth < 480) {
@@ -91,6 +91,16 @@ var mpAPP = (function() {
                 }
 
                 return slugs.object;
+            },
+            ready: function(fn) {
+                if (document.addEventListener) {
+                    document.addEventListener('DOMContentLoaded', fn);
+                } else {
+                    document.attachEvent('onreadystatechange', function() {
+                        if (document.readyState === 'interactive')
+                            fn();
+                    });
+                }
             }
         };
     };
@@ -275,13 +285,17 @@ var mpAPP = (function() {
         return false;
     };
 
-    var setup = function setup() {
+    var init = function init() {
         var urlPath = location.hash,
             helpers = util();
+
+        bindActions();
 
         if (!mobile) {
             wrapper.style.width = ((wrapperRowsWidth * wrapperRowsLength) + breakArea) + 'px';
             wrapper.parentNode.style.height = 'auto';
+        } else {
+        	mobileFunctions();
         }
 
         //Generate URL Paths
@@ -296,19 +310,10 @@ var mpAPP = (function() {
         }
     };
 
-    /**
-     * [init description]
-     * @return {[type]} [description]
-     */
-    setup();
-    bindActions();
-
-    if (mobile) {
-        mobileFunctions();
-    }
-
     return {
         next: next,
-        prev: prev    
+        prev: prev,
+        init: init,
+        util: util
     };
-}());
+};

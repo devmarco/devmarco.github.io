@@ -1,3 +1,10 @@
+//Init Application
+var app = mpAPP(),
+	util = app.util();
+
+util.ready(app.init);
+
+
 //Function for share posts
 var shareFunction = (function shareFunction() {
     window.shareThis = function(postUrl) {
@@ -8,4 +15,8 @@ var shareFunction = (function shareFunction() {
         window.open(postUrl, "Compartilhar", "width=700, height=500, top=" + top + ", left=" + left + ", scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no");
     };
 }());
+
+
+
+
 
