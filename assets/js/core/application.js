@@ -5,7 +5,7 @@
  * @return {[type]} [description]
  */
 
-var mpAPP = function () {
+var mpAPP = function() {
     var
     //Define the selectors
         wrapper = document.querySelector('.wrapper'),
@@ -81,7 +81,7 @@ var mpAPP = function () {
                     slugTitlesArray = [],
                     slugTitlesObject = [],
                     i = 1;
-                
+
                 slugTitlesObject = [{
                     title: document.title,
                     slug: '/'
@@ -90,7 +90,7 @@ var mpAPP = function () {
                 for (i; i < titlePage.length; i++) {
                     //Hasgbang Used for Support Github Pages
                     var title = titlePage[i].textContent || titlePage[i].innerText,
-                        titleSlug = '#/'+title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+                        titleSlug = '#/' + title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
 
                     //Array for indexOf search
                     slugTitlesArray.push(titleSlug);
@@ -200,10 +200,8 @@ var mpAPP = function () {
 
             window.pageYOffset > 0 ? scrollDistance = window.pageYOffset : scrollDistance = 0;
 
-            console.log(scrollDistance);
-
-            aside.style.webkitTransform = 'translate3d(0,'+scrollDistance+'px,0)';
-            aside.style.MozTransform = 'translate3d(0,'+scrollDistance+'px,0)';
+            aside.style.webkitTransform = 'translate3d(0,' + scrollDistance + 'px,0)';
+            aside.style.MozTransform = 'translate3d(0,' + scrollDistance + 'px,0)';
         };
     };
 
