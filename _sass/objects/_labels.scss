@@ -1,9 +1,12 @@
 .label {
     color: #fff;
-    padding: 2px 7px 4px;
+    padding: 2px 7px 3px;
     display: inline-block;
     background-color: #C0C0C0;
-    @extend %f10;
+    text-transform: uppercase;
+    line-height: 1.3em;
+    font-weight: bold;
+    @extend %f9;
     @include vendor(border-radius, 4px);
 }
 .label--works {
@@ -20,9 +23,30 @@
     color: #fff;
     @extend .label;
 }
-
 .label--about {
     background-color: #000;
     color: #fff;
+    @extend .label;
+}
+.label--js {
+    background-color: #FFE327;
+    color: #000;
+    @extend .label;
+}
+.label--blog {
+    background-color: #27aae1;
+    @extend .label;
+}
+.label--tests,
+.label--test,
+.label--karma,
+.label--tdd {
+    background-color: #42beae;
+    @extend .label;
+}
+
+.label--protractor {
+    background-color: #e23237;
+    color: #000;
     @extend .label;
 }

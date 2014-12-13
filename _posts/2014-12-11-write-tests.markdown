@@ -2,7 +2,7 @@
 title:  "Write tests!"
 date:   2014-12-11 18:38:12
 tagMaster: posts
-tags: ['blog','Javascript', 'tests', tips]
+tags: ['blog','js', 'tests', 'karma']
 ---
 
 ##Write tests for your project, Please!
