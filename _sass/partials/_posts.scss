@@ -34,7 +34,12 @@
         list-style-type: square;
 
         li {
+            padding: 0.5em 0;
             @extend %f12;
+
+            @include breakpoint(up-to-xs) {
+                padding: 1em 0;
+            }
         }
     }
     li {
