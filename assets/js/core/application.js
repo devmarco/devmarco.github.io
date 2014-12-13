@@ -8,50 +8,29 @@
 var mpAPP = function() {
     var
     //Define the selectors
-        wrapper = document.querySelector('.wrapper'),
-        wrapperRows = wrapper.querySelectorAll('.wrapper__rows'),
-        wrapperArrowsRight = document.querySelector('.arrow--right'),
-        wrapperArrowsLeft = document.querySelector('.arrow--left'),
-        navLinks = document.querySelectorAll('.js-anchor'),
-        shareButton = document.querySelectorAll('.js-share'),
-        body = document.querySelector('body'),
-        aside = wrapper.querySelector('.content'),
+    wrapper = document.querySelector('.wrapper'),
+    wrapperRows = wrapper.querySelectorAll('.wrapper__rows'),
+    wrapperArrowsRight = document.querySelector('.arrow--right'),
+    wrapperArrowsLeft = document.querySelector('.arrow--left'),
+    navLinks = document.querySelectorAll('.js-anchor'),
+    shareButton = document.querySelectorAll('.js-share'),
+    body = document.querySelector('body'),
+    aside = wrapper.querySelector('.content'),
 
-        //Base
-        wrapperRowsWidth = wrapperRows[0].offsetWidth,
-        wrapperRowsLength = wrapperRows.length,
-        distanceToHome = 0,
-        nextPosition = 0,
-        rowsLimit = (wrapperRowsLength - 1),
-        breakArea = 420,
-        mobile = false,
-        slugs;
+    //Base
+    wrapperRowsWidth = wrapperRows[0].offsetWidth,
+    wrapperRowsLength = wrapperRows.length,
+    distanceToHome = 0,
+    nextPosition = 0,
+    rowsLimit = (wrapperRowsLength - 1),
+    breakArea = 420,
+    mobile = false,
+    slugs;
 
     //If in mobile, change value to true
     if (window.outerWidth < 480) {
         mobile = true;
     }
-
-    var setup = function setup() {
-        var urlPath = location.hash,
-            helpers = util();
-
-        if (!mobile) {
-            wrapper.style.width = ((wrapperRowsWidth * wrapperRowsLength) + breakArea) + 'px';
-            wrapper.parentNode.style.height = 'auto';
-        }
-
-        //Generate URL Paths
-        slugs = helpers.generateSlugs();
-
-        if (urlPath !== '') {
-            var index = slugs.array.indexOf(urlPath);
-
-            document.title = urlPath;
-            run(index + 1);
-            distanceToHome = index + 1;
-        }
-    };
 
     /**
      * [helpers description]
@@ -296,11 +275,32 @@ var mpAPP = function() {
         return false;
     };
 
+    var setup = function setup() {
+        var urlPath = location.hash,
+            helpers = util();
+
+        if (!mobile) {
+            wrapper.style.width = ((wrapperRowsWidth * wrapperRowsLength) + breakArea) + 'px';
+            wrapper.parentNode.style.height = 'auto';
+        }
+
+        //Generate URL Paths
+        slugs = helpers.generateSlugs();
+
+        if (urlPath !== '') {
+            var index = slugs.array.indexOf(urlPath);
+
+            document.title = urlPath;
+            run(index + 1);
+            distanceToHome = index + 1;
+        }
+    };
+
     /**
      * [init description]
      * @return {[type]} [description]
      */
-    var init = function() {
+    var init = function init() {
         setup();
         bindActions();
 
