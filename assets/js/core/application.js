@@ -113,32 +113,43 @@ var mpAPP = function mpAPP() {
         var navLinksIterate = 0,
             shareLinksIterate = 0;
 
-        document.addEventListener('keydown', function(e) {
-            switch (e.keyCode) {
-                case 37:
-                    prev();
-                    break; // Left
-                case 39:
-                    next();
-                    break; // Right
-                    //case 38: fb_navigation.scroll_up_down(e); break; // Up
-                    //case 40: fb_navigation.scroll_up_down(e); break; // Down
-            }
-        });
+        if (!mobile) {
+            document.addEventListener('keydown', function(e) {
+                switch (e.keyCode) {
+                    case 37:
+                        prev();
+                        break; // Left
+                    case 39:
+                        next();
+                        break; // Right
+                        //case 38: fb_navigation.scroll_up_down(e); break; // Up
+                        //case 40: fb_navigation.scroll_up_down(e); break; // Down
+                }
+            });
 
-        document.addEventListener('mousemove', function(e) {
-            wrapperArrowsRight.style.top = (e.clientY - 28) + 'px';
-            wrapperArrowsLeft.style.top = (e.clientY - 28) + 'px';
-            e.preventDefault();
-        });
+            document.addEventListener('mousemove', function(e) {
+                wrapperArrowsRight.style.top = (e.clientY - 28) + 'px';
+                wrapperArrowsLeft.style.top = (e.clientY - 28) + 'px';
+                e.preventDefault();
+            });
 
-        wrapperArrowsRight.addEventListener('click', function() {
-            next();
-        });
+            wrapperArrowsRight.addEventListener('click', function() {
+                next();
+            });
 
-        wrapperArrowsLeft.addEventListener('click', function() {
-            prev();
-        });
+            wrapperArrowsLeft.addEventListener('click', function() {
+                prev();
+            });
+
+            var fixedPresentation = window.onscroll = function() {
+                var scrollDistance;
+
+                window.pageYOffset > 0 ? scrollDistance = window.pageYOffset : scrollDistance = 0;
+
+                aside.style.webkitTransform = 'translate3d(0,' + scrollDistance + 'px,0)';
+                aside.style.MozTransform = 'translate3d(0,' + scrollDistance + 'px,0)';
+            };
+        }
 
         //Listener popstate function
         window.onpopstate = function(event) {
@@ -182,16 +193,6 @@ var mpAPP = function mpAPP() {
         for (navLinksIterate; navLinksIterate < navLinks.length; navLinksIterate++) {
             bindNavLinks(navLinksIterate);
         }
-
-
-        var fixedPresentation = window.onscroll = function() {
-            var scrollDistance;
-
-            window.pageYOffset > 0 ? scrollDistance = window.pageYOffset : scrollDistance = 0;
-
-            aside.style.webkitTransform = 'translate3d(0,' + scrollDistance + 'px,0)';
-            aside.style.MozTransform = 'translate3d(0,' + scrollDistance + 'px,0)';
-        };
     };
 
 
@@ -291,22 +292,23 @@ var mpAPP = function mpAPP() {
 
         bindActions();
 
-        if (!mobile) {
-            wrapper.style.width = ((wrapperRowsWidth * wrapperRowsLength) + breakArea) + 'px';
-            wrapper.parentNode.style.height = 'auto';
-        } else {
-        	mobileFunctions();
-        }
-
         //Generate URL Paths
         slugs = helpers.generateSlugs();
 
-        if (urlPath !== '') {
-            var index = slugs.array.indexOf(urlPath);
+        if (!mobile) {
+            wrapper.style.width = ((wrapperRowsWidth * wrapperRowsLength) + breakArea) + 'px';
+            wrapper.parentNode.style.height = 'auto';
 
-            document.title = urlPath;
-            run(index + 1);
-            distanceToHome = index + 1;
+            if (urlPath !== '') {
+                var index = slugs.array.indexOf(urlPath);
+
+                document.title = urlPath;
+                run(index + 1);
+                distanceToHome = index + 1;
+            }
+
+        } else {
+            mobileFunctions();
         }
     };
 

@@ -28,6 +28,7 @@ html, body {
 }
 .wrapper__rows {
     position: relative;
+    max-width: 480px;
     width: 37em;
     height: 100%;
     padding: 0 0 0 1.8em;
