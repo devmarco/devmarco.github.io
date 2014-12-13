@@ -9,12 +9,3 @@ var shareFunction = (function shareFunction() {
     };
 }());
 
-
-//Init Application
-
-document.addEventListener('DOMContentLoaded', function(){
-	var app = mpAPP();
-	app.init();
-});
-
-

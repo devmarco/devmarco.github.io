@@ -5,7 +5,7 @@
  * @return {[type]} [description]
  */
 
-var mpAPP = function() {
+var mpAPP = (function() {
     var
     //Define the selectors
     wrapper = document.querySelector('.wrapper'),
@@ -300,20 +300,15 @@ var mpAPP = function() {
      * [init description]
      * @return {[type]} [description]
      */
-    var init = function init() {
-        setup();
-        bindActions();
+    setup();
+    bindActions();
 
-        if (mobile) {
-            mobileFunctions();
-        }
-
-        return false;
-    };
+    if (mobile) {
+        mobileFunctions();
+    }
 
     return {
         next: next,
-        prev: prev,
-        init: init
+        prev: prev    
     };
-};
+}());
