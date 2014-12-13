@@ -3,8 +3,7 @@
  */
 .highlight {
     background: #fff;
-    margin-bottom: 16px;
-    padding: 1em;
+    padding: 1em 0;
     @extend %f14;
 
     .c     { color: #998; font-style: italic } // Comment

@@ -58,3 +58,8 @@
     background-color: #2aa7e0;
     @extend .label;
 }
+
+.label--git {
+    background-color: #f14e32;
+    @extend .label;
+}
