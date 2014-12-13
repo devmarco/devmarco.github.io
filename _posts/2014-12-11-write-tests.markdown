@@ -1,6 +1,6 @@
 ---
 title:  "Write tests!"
-date:   2014-12-11 18:38:12
+date:   2014-12-13 18:38:12
 tagMaster: posts
 tags: ['blog','js', 'tests', 'karma']
 ---

@@ -10,7 +10,7 @@
     @include vendor(border-radius, 4px);
 }
 .label--works {
-    background-color: #000;
+    background-color: #6B6B6B;
     @extend .label;
 }
 .label--tips {
@@ -34,7 +34,7 @@
     @extend .label;
 }
 .label--blog {
-    background-color: #27aae1;
+    background-color: #C27FCB;
     @extend .label;
 }
 .label--tests,
@@ -44,9 +44,17 @@
     background-color: #42beae;
     @extend .label;
 }
-
 .label--protractor {
     background-color: #e23237;
     color: #000;
+    @extend .label;
+}
+.label--html5 {
+    background-color: #f16529;
+    @extend .label;
+}
+.label--css,
+.label--css3 {
+    background-color: #2aa7e0;
     @extend .label;
 }
