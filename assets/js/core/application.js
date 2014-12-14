@@ -6,9 +6,8 @@
  */
 
 var mpAPP = function mpAPP() {
-    var
     //Define the selectors
-        wrapper = document.querySelector('.wrapper'),
+    var wrapper = document.querySelector('.wrapper'),
         wrapperRows = wrapper.querySelectorAll('.wrapper__rows'),
         wrapperArrowsRight = document.querySelector('.arrow--right'),
         wrapperArrowsLeft = document.querySelector('.arrow--left'),
