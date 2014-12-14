@@ -14,4 +14,7 @@ sass:
     style: :compressed
 
 # Permalinks
-permalink: :title
+permalink: '#/:title'
+
+# Plugins
+gems: ['jekyll-sitemap']
