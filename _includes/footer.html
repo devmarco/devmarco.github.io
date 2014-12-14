@@ -7,16 +7,6 @@ window.fbAsyncInit = function() {
         xfbml: true,
         version: 'v2.1'
     });
-
-    window.shareThisPost = function shareThisPost(link, caption, description) {
-        FB.ui({
-            method: 'feed',
-            link: link,
-            picture: 'http://devmarco.github.io/assets/imgs/logo/devmarco-fb.jpg',
-            caption: caption,
-            description: description
-        });
-    };
 };
 </script>
 
@@ -65,4 +55,5 @@ ga('create', 'UA-35159922-1', 'auto');
 ga('send', 'pageview');
 </script>
 
-<script src="{{ " /assets/js/app.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /assets/js/min/app.min.js " | prepend: site.baseurl }}"></script>
+

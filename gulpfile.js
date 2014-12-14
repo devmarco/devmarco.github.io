@@ -3,13 +3,13 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat');
 
 gulp.task('concat', function() {
-  gulp.src('assets/js/core/*.js')
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('assets/js/'))
+  gulp.src(['assets/js/app/core/**/*.js','assets/js/app/*.js'])
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest('assets/js/min/'))
 });
 
 gulp.task('compress', function() {
-  gulp.src('assets/js/*.js')
+  gulp.src('assets/js/min/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('assets/js/'))
+    .pipe(gulp.dest('assets/js/min/'))
 });
