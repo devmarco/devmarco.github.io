@@ -28,7 +28,6 @@ html, body {
 }
 .wrapper__rows {
     position: relative;
-    max-width: 480px;
     width: 37em;
     height: 100%;
     padding: 0 0 0 1.8em;
@@ -37,10 +36,10 @@ html, body {
     float: left;
     @include vendor(transition, all 0.2s ease-in-out);
     @include breakpoint(from-lg) {
-        width: 40em;
+        width: 40em !important;
     }
     @include breakpoint(up-to-xs) {
-        width: 100%;
+        width: 100% !important;
         height: auto;
         max-width: 100%;
         padding: 0;
