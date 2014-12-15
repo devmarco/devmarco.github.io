@@ -1,6 +1,6 @@
 .label {
     color: #fff;
-    padding: 2px 7px 3px;
+    padding: 0.2em 0.7em 0.3em;
     display: inline-block;
     background-color: #C0C0C0;
     text-transform: uppercase;
@@ -8,6 +8,10 @@
     font-weight: bold;
     @extend %f9;
     @include vendor(border-radius, 4px);
+
+    @include breakpoint(from-lg) {
+        padding: 0.4em 0.7em 0.3em;
+    }
 }
 .label--works {
     background-color: #6B6B6B;
