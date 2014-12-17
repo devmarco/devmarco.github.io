@@ -37,7 +37,8 @@ mpAPP = function() {
     return false;
 }
 
-//Expose exports class
-mpAPP.prototype.exports = function(a) {
-    return this;
+// Expose exports method
+// This is just a wrapper for expose exports method.
+mpAPP.prototype.exports = function() {
+    return false;
 }
