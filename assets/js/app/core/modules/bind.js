@@ -15,10 +15,10 @@ mpAPP.prototype.exports.bind = function(_this) {
             document.addEventListener('keydown', function(e) {
                 switch (e.keyCode) {
                     case 37:
-                        prev();
+                        actions.prev();
                         break; // Left
                     case 39:
-                        next();
+                        actions.next();
                         break; // Right
                         //case 38: fb_navigation.scroll_up_down(e); break; // Up
                         //case 40: fb_navigation.scroll_up_down(e); break; // Down
