@@ -1,5 +1,7 @@
 // Initialize application
-var app = new mpAPP('vars', 'util', 'actions', 'bind');
+var app = new mpAPP('vars', 'util', 'actions', 'bind', 'teste');
+
+console.log(app);
 
 //Get the modules based on DI
 var base    = app.vars,

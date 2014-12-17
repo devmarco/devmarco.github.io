@@ -17,17 +17,23 @@ mpAPP = function() {
     var i = 0;
 
     for (i in arguments) {
-    	//If arguments is a function
-    	if (typeof Object.getPrototypeOf(this).exports[arguments[i]] === 'function') {
-    		this[arguments[i]] = Object.getPrototypeOf(this).exports[arguments[i]](this);
-    	}
+        var type = (typeof Object.getPrototypeOf(this).exports[arguments[i]]),
+            module = Object.getPrototypeOf(this).exports[arguments[i]];
 
-    	//If argument is a object
-    	if (typeof Object.getPrototypeOf(this).exports[arguments[i]] === 'object') {
-    		this[arguments[i]] = Object.getPrototypeOf(this).exports[arguments[i]];
-    	}
+        //If arguments is a function
+        if (type === 'function') {
+            this[arguments[i]] = module(this);
+        }
+
+        //If argument is a object
+        if (type === 'object') {
+            this[arguments[i]] = module;
+        }
+
+        //Show a warning if the module does not exist.
+        if (type !== 'function' && type !== 'object')
+            console.warn(arguments[i] + ': was required, but does not exist a module associated.');
     }
-
     return false;
 }
 
